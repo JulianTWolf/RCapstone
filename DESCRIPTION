@@ -1,0 +1,25 @@
+Package: RCapstone
+Type: Package
+Title: Mastering Software Development in R Capstone Project. Cleaning, timelining and mapping data of the NOAA Significant Earthquake data.
+Version: 0.1.0
+Author: Julian Wolf
+Description: This is a package for cleaning, timelining, 
+    and mapping NOAA Significant Earthquake data. It was built
+    for the Capstone project for the Coursera Mastering Software Development 
+    in R specialization.
+License: MIT
+Encoding: UTF-8
+LazyData: true
+Suggests: knitr,
+    rmarkdown,
+    lubridate,
+    readr,
+    testthat
+Imports: dplyr,
+    tidyr,
+    ggplot2,
+    leaflet,
+    devtools,
+    grid
+VignetteBuilder: knitr
+RoxygenNote: 6.0.1

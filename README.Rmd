@@ -1,0 +1,44 @@
+---
+output:
+  md_document:
+    variant: markdown_github
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+# RCapstone
+
+The goal of RCapstone is to clean, timeline and map NOAA Significant Earthquake data. The package was built for the Capstone project of the Coursera Mastering Software Development in R specialization.
+
+## Installation:
+
+To install the package first install and load the devtools package. Then run:
+
+```{r}
+devtools::install_github("JulianTWolf/RCapstone")
+library(RCapstone)
+```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+data_raw <<- readr::read_delim(file.choose(), col_names=T, delim = "\t")
+eq_location_clean(data_raw)
+eq_clean_data(data_loc_clean)
+
+data_clean %>% dplyr::filter(COUNTRY %in% c('USA', 'UK')) %>% dplyr::filter(DATE > '2000-01-01') %>% ggplot(aes(x = DATE, y = COUNTRY, color = TOTAL_DEATHS, size = EQ_PRIMARY)) + geom_timeline() + geom_timeline_label(aes(x = DATE, y = COUNTRY, magnitude = EQ_PRIMARY, label = LOCATION_NAME))
+
+data_clean %>% dplyr::filter(COUNTRY == "MEXICO" & lubridate::year(DATE) >= 2000) %>%
+  dplyr::mutate(popup_text = eq_create_label(.)) %>%
+  eq_map(annot_col = "popup_text")
+```

@@ -1,0 +1,89 @@
+---
+title: "RCapstone"
+author: "Julian Wolf"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# The package´s goal
+The goal of the capstone project is to integrate the skills I have developed over the courses in the Mastering Software Development in R Coursera Specialization (Johns Hopkins University) and aims to build a software package that can be used to work with the NOAA Significant Earthquakes dataset.
+
+The NOAA Significant Earthquake Database contains the data of earthquakes from 2150 B.C. to the present. You can download the data from <https://www.ngdc.noaa.gov/nndc/struts/form?t=101650&s=1&d=1>. The package cleans, timelines and maps NOAA significant earthquake data.
+
+## Install the package
+To install the package first install and load the devtools package. Then install and load "RCapstone".
+
+```{r}
+#library(devtools)
+#devtools::install_github("JulianTWolf/RCapstone")
+#library(RCapstone)
+```
+
+## Read and clean data example
+
+The NOAA Significant Earthquake Database can be downloaded from <https://www.ngdc.noaa.gov/nndc/struts/form?t=101650&s=1&d=1>. Store the file locally on your computer.
+
+```{r}
+# Reads the file and stores it to a variable called data_raw:
+#data_raw <<- readr::read_delim(file.choose(), col_names=T, delim = "\t")
+# eq_location_clean removes the country from the LOCATION_NAME column for a better look and stores it to an object called data_loc_clean
+#eq_location_clean(data_raw)
+# eq_clean_data generates a DATE column and converts LATITUDE, LONGITUDE and EQ_PRIMARY columns to numeric class. It stores it to an object called data_clean.
+#eq_clean_data(data_loc_clean)
+```
+
+## Timeline visualization example
+
+After reading and cleaning the data it can be displayed in a timeline graph. There are two geoms functions to do this, which are developed usign the ggplot package.
+
+The first geom is called geom_timeline and displays a timeline of earthquakes, the second one is called geom_timeline_label and adds the Eartquakes's Location labels to an Earthquake's timeline. The number of earthquakes to label can be provided to the function (n_max) or the default of 5 will be used.
+
+To display the data of the USA and UK after 2000-01-01 use the following code:
+```{r}
+#data_clean %>% dplyr::filter(COUNTRY %in% c('USA', 'UK')) %>% dplyr::filter(DATE > '2000-01-01') %>%
+#ggplot(aes(x = DATE, y = COUNTRY, color = TOTAL_DEATHS, size = EQ_PRIMARY)) + geom_timeline()
+```
+
+To display the same data with labels run:
+```{r}
+#data_clean %>%
+#dplyr::filter(COUNTRY %in% c('USA', 'UK')) %>%
+#dplyr::filter(DATE > '2000-01-01') %>%
+#ggplot(aes(x = DATE, y = COUNTRY, color = TOTAL_DEATHS, size = EQ_PRIMARY)) +
+#geom_timeline() +
+#geom_timeline_label(aes(x = DATE, y = COUNTRY, magnitude = EQ_PRIMARY, label = LOCATION_NAME))
+```
+
+## Interactive map visualization example
+To display the Earthquakes Data visualized in an interactive map, the leaflet package is used. The Earthquakes will be located in the map by their Epicenter as Circles (radius proportional to EQ_PRIMARY) and a popup with the DATE will appear while the mouse is rolling over them. Use the argument annot_col in the eq_map function to set the popups content.
+
+To display a map of Earthquakes in Mexico after 2000 (dates only):
+
+```{r}
+#data_clean %>%
+#dplyr::filter(COUNTRY == "MEXICO" & lubridate::year(DATE) >= 2000) %>%
+#eq_map(annot_col = "DATE")
+```
+
+To display a map of Earthquakes in Mexico after 2000 (more data: Location, Magnitude, and Deaths):
+
+```{r}
+#data_clean %>%
+#dplyr::filter(COUNTRY == "MEXICO" & lubridate::year(DATE) >= 2000) %>%
+#dplyr::mutate(popup_text = eq_create_label(.)) %>%
+#eq_map(annot_col = "popup_text")
+```
+
+## References
+National Geophysical Data Center / World Data Service (NGDC/WDS): Significant Earthquake Database. National Geophysical Data Center, NOAA. doi:10.7289/V5TD9V7K
