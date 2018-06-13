@@ -13,7 +13,7 @@ library(lubridate)
 library(devtools)
 
 #' Reading the NOAA earthquake data file
-data_raw <<- readr::read_delim(file.choose(), col_names=T, delim = "\t")
+data_raw <<- readr::read_delim("/Users/julian/Desktop/signif.txt.tsv", col_names=T, delim = "\t")
 
 #' Function for cleaning the NOAA earthquake data file
 #'
