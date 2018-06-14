@@ -34,6 +34,7 @@ the top 5 earthquakes for each country specified, however, the user may
 adjust this with the n_max aesthetic.
 }
 \examples{
+\dontrun{
 library(dplyr)
 library(ggplot2)
 
@@ -43,4 +44,5 @@ data_clean \%>\%
   ggplot(aes(x = DATE, y = COUNTRY, color = TOTAL_DEATHS, size = EQ_PRIMARY)) +
   geom_timeline() +
   geom_timeline_label(aes(x = DATE, y = COUNTRY, magnitude = EQ_PRIMARY, label = LOCATION_NAME))
+}
 }

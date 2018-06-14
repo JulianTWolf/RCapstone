@@ -27,6 +27,7 @@ geom_timeline(mapping = NULL, data = NULL, stat = "identity",
 Function to build a layer for plotting a time line of earthquakes ranging from xmin to xmaxdates with a point for each earthquake.
 }
 \examples{
+\dontrun{
 library(dplyr)
 library(ggplot2)
 
@@ -35,4 +36,5 @@ data_clean \%>\%
   dplyr::filter(DATE > '2000-01-01') \%>\%
   ggplot(aes(x = DATE, y = COUNTRY, color = TOTAL_DEATHS, size = EQ_PRIMARY)) +
   geom_timeline()
+}
 }

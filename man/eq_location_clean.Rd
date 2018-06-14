@@ -23,5 +23,7 @@ to Title Case. This will make the location name easier to read when plotting
 and mapping.
 }
 \examples{
+\dontrun{
 data_loc_clean <- eq_location_clean(data_raw)
+}
 }

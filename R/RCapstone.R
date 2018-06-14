@@ -70,6 +70,7 @@ eq_clean_data <- function(x){
 #' data_loc_clean <- eq_location_clean(data_raw)
 #' }
 
+
 eq_location_clean <- function(x){
   data_loc_clean <<- x %>% mutate(LOCATION_NAME = purrr::map2_chr(COUNTRY, LOCATION_NAME,
                                                             function(COUNTRY, LOCATION_NAME) {
