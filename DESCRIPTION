@@ -21,6 +21,8 @@ Imports: dplyr,
     ggplot2,
     leaflet,
     devtools,
-    grid
+    grid,
+    purrr,
+    stringr
 VignetteBuilder: knitr
 RoxygenNote: 6.0.1
