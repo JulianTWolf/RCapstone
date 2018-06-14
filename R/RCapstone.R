@@ -8,7 +8,6 @@
 #' Loading required packages
 library(tidyr)
 library(dplyr)
-library(lubridate)
 library(devtools)
 library(purrr)
 
