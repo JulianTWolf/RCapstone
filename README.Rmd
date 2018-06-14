@@ -1,3 +1,5 @@
+# Travis status image
+https://travis-ci.org/JulianTWolf/RCapstone.svg?branch=master
 ---
 output: github_document
 ---
@@ -23,23 +25,4 @@ To install the package first install and load the devtools package. Then run:
 ```{r}
 devtools::install_github("JulianTWolf/RCapstone")
 library(RCapstone)
-```
-
-## Example
-
-This is a basic example which shows you how to solve a common problem:
-
-```{r example}
-library(dplyr)
-library(ggplot2)
-library(RCapstone)
-data_raw <<- readr::read_delim("/Users/julian/Documents/07 Sonstiges/R-Projekte/RCapstone/signif.txt.tsv", col_names=T, delim = "\t")
-eq_clean_data(eq_location_clean(data_raw))
-
-
-data_clean %>% dplyr::filter(COUNTRY %in% c('USA', 'UK')) %>% dplyr::filter(DATE > '2000-01-01') %>% ggplot(aes(x = DATE, y = COUNTRY, color = TOTAL_DEATHS, size = EQ_PRIMARY)) + geom_timeline()
-
-data_clean %>% dplyr::filter(COUNTRY == "MEXICO" & lubridate::year(DATE) >= 2000) %>%
-  dplyr::mutate(popup_text = eq_create_label(.)) %>%
-  eq_map(annot_col = "popup_text")
 ```

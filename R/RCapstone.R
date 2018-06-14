@@ -14,7 +14,7 @@ library(devtools)
 library(purrr)
 
 #' Reading the NOAA earthquake data file
-data_raw <<- readr::read_delim("/Users/julian/Documents/07 Sonstiges/R-Projekte/RCapstone/signif.txt.tsv", col_names=T, delim = "\t")
+#' data_raw <<- readr::read_delim("/Users/julian/Documents/07 Sonstiges/R-Projekte/RCapstone/signif.txt.tsv", col_names=T, delim = "\t")
 
 #' Function for cleaning the NOAA earthquake data file
 #'
