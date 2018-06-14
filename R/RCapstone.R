@@ -6,7 +6,6 @@
 
 
 #' Loading required packages
-library(readr)
 library(tidyr)
 library(dplyr)
 library(lubridate)
