@@ -1,3 +1,7 @@
+library(dplyr)
+library(tidyr)
+library(stringr)
+
 #' Creates popup text for markers.
 #'
 #' This function takes the dataset as an argument and creates an HTML label that can be used as the annotation text

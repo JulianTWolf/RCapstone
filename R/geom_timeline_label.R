@@ -3,7 +3,7 @@ library(tidyr)
 library(ggplot2)
 library(grid)
 
-#' Funcion for adding the Eartquakes's Location labels to an Earthquake's timeline
+#' Funcion for adding the Earthquakes's Location labels to an Earthquake's timeline
 #'
 #' geom_timeline_label works best when used with
 #' geom_timeline, labeling the top earthquakes, by
@@ -24,6 +24,7 @@ library(grid)
 #' @return the Earthquake's labels
 #'
 #' @examples
+#' \dontrun{
 #' library(dplyr)
 #' library(ggplot2)
 #'
@@ -33,12 +34,13 @@ library(grid)
 #'   ggplot(aes(x = DATE, y = COUNTRY, color = TOTAL_DEATHS, size = EQ_PRIMARY)) +
 #'   geom_timeline() +
 #'   geom_timeline_label(aes(x = DATE, y = COUNTRY, magnitude = EQ_PRIMARY, label = LOCATION_NAME))
+#'   }
 
 geom_timeline_label <- function(mapping = NULL, data = NULL, stat = "identity", position = "identity", na.rm = FALSE,
-                                show.legend = NA, inherit.aes = FALSE, ...)
+                                show.legend = NA, inherit.aes = FALSE)
 {
   ggplot2::layer(geom = GeomTimelineLabel, mapping = mapping, data = data, stat = stat, position = position,
-                 show.legend = show.legend, inherit.aes = inherit.aes, params = list(na.rm = na.rm, ...))
+                 show.legend = show.legend, inherit.aes = inherit.aes, params = list(na.rm = na.rm))
 }
 
 #' GeomTimelineLabel

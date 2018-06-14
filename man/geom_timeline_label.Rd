@@ -2,11 +2,11 @@
 % Please edit documentation in R/geom_timeline_label.R
 \name{geom_timeline_label}
 \alias{geom_timeline_label}
-\title{Funcion for adding the Eartquakes's Location labels to an Earthquake's timeline}
+\title{Funcion for adding the Earthquakes's Location labels to an Earthquake's timeline}
 \usage{
 geom_timeline_label(mapping = NULL, data = NULL, stat = "identity",
   position = "identity", na.rm = FALSE, show.legend = NA,
-  inherit.aes = FALSE, ...)
+  inherit.aes = FALSE)
 }
 \arguments{
 \item{mapping}{Set of aesthetic mappings created by aes or aes_. If specified and inherit.aes = TRUE (the default), it is combined with the default mapping at the top level of the plot. You must supply mapping if there is no plot mapping.}
@@ -44,5 +44,5 @@ data_clean \%>\%
   ggplot(aes(x = DATE, y = COUNTRY, color = TOTAL_DEATHS, size = EQ_PRIMARY)) +
   geom_timeline() +
   geom_timeline_label(aes(x = DATE, y = COUNTRY, magnitude = EQ_PRIMARY, label = LOCATION_NAME))
-}
+  }
 }

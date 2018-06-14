@@ -4,7 +4,7 @@
 \name{data_raw}
 \alias{data_raw}
 \title{Reading the NOAA earthquake data file}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 14 rows and 1 columns.}
+\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 6033 rows and 47 columns.}
 \usage{
 data_raw
 }

@@ -18,6 +18,6 @@ Function for cleaning the NOAA earthquake data file
 }
 \examples{
 \dontrun{
-#' eq_clean_data(data_loc_clean)
+eq_clean_data(data_loc_clean)
 }
 }

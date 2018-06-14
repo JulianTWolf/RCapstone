@@ -1,6 +1,6 @@
 Package: RCapstone
 Type: Package
-Title: Mastering Software Development in R Capstone Project.
+Title: Mastering Software Development in R Capstone Project
 Version: 0.1.0
 Authors@R: person("Julian", "Wolf", email = "julianwolf@t-online.de",
   role = c("aut", "cre"))

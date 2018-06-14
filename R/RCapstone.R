@@ -11,6 +11,7 @@ library(tidyr)
 library(dplyr)
 library(lubridate)
 library(devtools)
+library(purrr)
 
 #' Reading the NOAA earthquake data file
 data_raw <<- readr::read_delim("/Users/julian/Documents/07 Sonstiges/R-Projekte/RCapstone/signif.txt.tsv", col_names=T, delim = "\t")
