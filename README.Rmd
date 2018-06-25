@@ -1,5 +1,3 @@
-# Travis status image
-https://travis-ci.org/JulianTWolf/RCapstone.svg?branch=master
 ---
 output: github_document
 ---

@@ -5,3 +5,5 @@ library(dplyr)
 library(ggplot2)
 
 context("Test functions in the package")
+
+system.file("extdata", "signif.txt.csv", package = "RCapstone")
