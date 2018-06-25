@@ -1,5 +1,4 @@
-# Travis status image
-https://travis-ci.org/JulianTWolf/RCapstone.svg?branch=master
+[![Build Status](https://travis-ci.org/JulianTWolf/RCapstone.svg?branch=master)](https://travis-ci.org/JulianTWolf/RCapstone)
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 RCapstone
